@@ -13,14 +13,18 @@ if (close && modal) {
     close.addEventListener('click', () => {
         modal.style.display = 'none';
     });
-}
-document.addEventListener("DOMContentLoaded", function () {
+}document.addEventListener("DOMContentLoaded", function () {
     const navbarLinks = document.querySelectorAll("#navbar li a");
     const currentPath = window.location.pathname;
 
     navbarLinks.forEach(link => {
-        if (link.getAttribute("href") === currentPath.split('/').pop()) {
+        const linkPath = link.getAttribute("href");
+        // If the last part of the href matches the current path, add the active class
+        if (currentPath.endsWith(linkPath)) {
             link.classList.add("active");
+        } else {
+            link.classList.remove("active"); // Ensure to remove active from other links
         }
     });
 });
+
