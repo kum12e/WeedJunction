@@ -1507,3 +1507,10 @@ td i:hover {
   color: #000;
   font-size: 1.2rem;
 }
+#navbar li a.active {
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-decoration: none;
+}

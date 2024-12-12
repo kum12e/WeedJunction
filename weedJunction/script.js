@@ -14,3 +14,13 @@ if (close && modal) {
         modal.style.display = 'none';
     });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const navbarLinks = document.querySelectorAll("#navbar li a");
+    const currentPath = window.location.pathname;
+
+    navbarLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPath.split('/').pop()) {
+            link.classList.add("active");
+        }
+    });
+});
